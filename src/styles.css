@@ -1,0 +1,233 @@
+:root {
+  --bg: #0b0f14;
+  --card: #141b24;
+  --text: #e9f0f7;
+  --muted: #8b9bb0;
+  --accent: #4aa8ff;
+  --accent-dim: #2a6cb5;
+  --border: #243041;
+  --ok: #3ecf8e;
+  --warn: #f0c14a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "SF Pro Text", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  background: radial-gradient(1200px 800px at 20% -10%, #132238 0%, var(--bg) 55%);
+  color: var(--text);
+  line-height: 1.55;
+}
+
+#app {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+h1 {
+  font-size: 1.45rem;
+  font-weight: 650;
+  margin: 0 0 0.35rem;
+  letter-spacing: 0.02em;
+}
+
+h2 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.sub {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 0 0 1.25rem;
+}
+
+.card {
+  background: rgba(20, 27, 36, 0.92);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem 1.2rem 1rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.progress {
+  height: 5px;
+  background: var(--border);
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.progress > i {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-dim), var(--accent));
+  border-radius: 3px;
+  transition: width 0.22s ease;
+}
+
+.q-text {
+  font-size: 1.05rem;
+  margin-bottom: 0.9rem;
+}
+
+button.option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.78rem 1rem;
+  margin-bottom: 0.45rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #0f141c;
+  color: var(--text);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, transform 0.08s;
+}
+
+button.option:hover {
+  border-color: var(--accent-dim);
+  background: #121a25;
+}
+
+button.option:active {
+  transform: scale(0.99);
+}
+
+button.option:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+button.primary,
+button.ghost {
+  padding: 0.55rem 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+button.primary {
+  background: linear-gradient(180deg, #5cb6ff, var(--accent));
+  color: #061018;
+}
+
+button.primary:hover {
+  filter: brightness(1.06);
+}
+
+button.ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+button.ghost:hover {
+  border-color: var(--accent-dim);
+}
+
+.result-code {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  margin-bottom: 0.35rem;
+}
+
+.result-title {
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem;
+}
+
+.result-body p {
+  margin: 0 0 0.65rem;
+}
+
+.result-bullets {
+  margin: 0.5rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.result-bullets li {
+  margin-bottom: 0.35rem;
+}
+
+.cite {
+  font-size: 0.8rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.category-grid {
+  display: grid;
+  gap: 0.65rem;
+}
+
+button.cat {
+  text-align: left;
+  padding: 1rem 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #0f141c;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+button.cat:hover {
+  border-color: var(--accent-dim);
+  background: #121a25;
+}
+
+.cat-title {
+  font-weight: 650;
+  margin-bottom: 0.2rem;
+}
+
+.cat-sub {
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+.axis-pill {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+}

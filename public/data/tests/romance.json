@@ -1,0 +1,230 @@
+{
+  "id": "romance",
+  "title": "恋爱互动三轴谱",
+  "disclaimer": "本测验讨论的是亲密关系中的互动偏好（表达、亲密节奏、关系起伏），参考亲密关系研究里常见的沟通与依恋相关维度的大众化表述。结果不构成心理诊断或关系处方；若你正经历困扰，请寻求专业心理咨询。",
+  "intro": "请按你在亲密关系里「更自然、更少耗能」的方式作答。若你目前单身，可想象你更期待的关系互动方式。",
+  "axisSchema": {
+    "axes": [
+      { "high": "bond_close", "low": "bond_space", "highLetter": "C", "lowLetter": "P" },
+      { "high": "express_direct", "low": "express_subtle", "highLetter": "D", "lowLetter": "U" },
+      { "high": "routine_stable", "low": "surprise_novel", "highLetter": "R", "lowLetter": "N" }
+    ]
+  },
+  "fallbackAxisKey": "P-U-N",
+  "questions": [
+    {
+      "text": "当你很喜欢对方时，你更常用的表达方式是？",
+      "choices": [
+        { "label": "直接说「我喜欢你/我想你」，并主动安排见面", "scores": { "express_direct": 3, "bond_close": 1 } },
+        { "label": "用行动照顾：记得喜好、默默准备小惊喜", "scores": { "express_subtle": 2, "bond_close": 1 } },
+        { "label": "先观察对方节奏，避免给对方压力", "scores": { "express_subtle": 2, "bond_space": 1 } },
+        { "label": "用玩笑或轻松话题试探，把认真留到关键时刻", "scores": { "express_subtle": 2, "surprise_novel": 1 } }
+      ]
+    },
+    {
+      "text": "理想的一周相处密度，你更接近？",
+      "choices": [
+        { "label": "几乎每天联系，重要日程一起出现", "scores": { "bond_close": 3, "routine_stable": 1 } },
+        { "label": "固定几天高质量相处，其余各自忙", "scores": { "bond_space": 2, "routine_stable": 2 } },
+        { "label": "不固定，但火花来了就黏在一起", "scores": { "bond_close": 2, "surprise_novel": 2 } },
+        { "label": "低频但深度：像「充电式约会」", "scores": { "bond_space": 2, "express_direct": 1 } }
+      ]
+    },
+    {
+      "text": "发生冲突时，你更倾向？",
+      "choices": [
+        { "label": "当场把话说开，哪怕会吵一会儿", "scores": { "express_direct": 3 } },
+        { "label": "先冷静，再用文字把逻辑讲清楚", "scores": { "express_subtle": 2, "bond_space": 1 } },
+        { "label": "先照顾情绪，再慢慢找解决方案", "scores": { "express_subtle": 2, "bond_close": 1 } },
+        { "label": "希望对方能读懂我的不舒服（但也会努力说出来）", "scores": { "bond_close": 1, "express_subtle": 2 } }
+      ]
+    },
+    {
+      "text": "你对「仪式感」的态度更像？",
+      "choices": [
+        { "label": "纪念日要过，流程要稳定，这是安全感来源", "scores": { "routine_stable": 3, "bond_close": 1 } },
+        { "label": "偶尔大仪式感就够了，日常舒服更重要", "scores": { "bond_space": 1, "routine_stable": 1 } },
+        { "label": "喜欢即兴：突然请假去旅行、突然深夜兜风", "scores": { "surprise_novel": 3 } },
+        { "label": "仪式感不重要，重要的是被理解与被尊重", "scores": { "express_direct": 1, "bond_space": 1 } }
+      ]
+    },
+    {
+      "text": "当你压力大时，你更希望伴侣？",
+      "choices": [
+        { "label": "陪在身边，哪怕不说话也好", "scores": { "bond_close": 3 } },
+        { "label": "给我空间处理，但明确表达支持在", "scores": { "bond_space": 3, "express_direct": 1 } },
+        { "label": "带我换场景：吃饭、散步、看展转移注意力", "scores": { "surprise_novel": 2, "bond_close": 1 } },
+        { "label": "帮我一起拆解问题，给建议但尊重我决定", "scores": { "express_direct": 2, "routine_stable": 1 } }
+      ]
+    },
+    {
+      "text": "你对「分享社交圈」的速度更像？",
+      "choices": [
+        { "label": "确定关系后很快想见朋友家人", "scores": { "bond_close": 3, "express_direct": 1 } },
+        { "label": "慢慢来，关系稳定再逐步公开", "scores": { "bond_space": 2, "routine_stable": 2 } },
+        { "label": "看情况：如果对方主动我会配合", "scores": { "express_subtle": 2 } },
+        { "label": "希望长期保留一部分独立社交圈", "scores": { "bond_space": 3 } }
+      ]
+    },
+    {
+      "text": "你更在意伴侣哪类反馈？",
+      "choices": [
+        { "label": "明确的肯定：「我需要你」「你做得很好」", "scores": { "express_direct": 3, "bond_close": 1 } },
+        { "label": "细节里的体贴：记得我说过的小事", "scores": { "express_subtle": 3, "routine_stable": 1 } },
+        { "label": "一起成长：讨论目标、计划未来", "scores": { "routine_stable": 2, "express_direct": 1 } },
+        { "label": "新鲜感：一起尝试新爱好、新城市", "scores": { "surprise_novel": 3 } }
+      ]
+    },
+    {
+      "text": "你对「聊天频率」的偏好？",
+      "choices": [
+        { "label": "高频碎片分享：吃到什么都想拍给对方", "scores": { "bond_close": 2, "express_direct": 1 } },
+        { "label": "每天固定时间认真聊一次就够", "scores": { "routine_stable": 2, "bond_space": 1 } },
+        { "label": "不需要时刻在线，但关键时刻必须在", "scores": { "bond_space": 2, "express_direct": 1 } },
+        { "label": "更吃「突然的长电话」那种情绪峰值", "scores": { "surprise_novel": 2, "bond_close": 1 } }
+      ]
+    },
+    {
+      "text": "当你觉得被忽略时，你更可能？",
+      "choices": [
+        { "label": "直接说「我不开心，因为…」", "scores": { "express_direct": 3 } },
+        { "label": "先冷淡一点，等对方察觉", "scores": { "express_subtle": 2, "bond_space": 1 } },
+        { "label": "用提问引导对方意识到问题", "scores": { "express_subtle": 2 } },
+        { "label": "写下来整理思路，再找合适时机沟通", "scores": { "routine_stable": 1, "express_subtle": 2 } }
+      ]
+    },
+    {
+      "text": "你对长期关系的想象更偏？",
+      "choices": [
+        { "label": "稳定日程：一起生活、分工、可预期", "scores": { "routine_stable": 3, "bond_close": 1 } },
+        { "label": "保留各自事业与圈子，但关键决策一起走", "scores": { "bond_space": 2, "routine_stable": 1 } },
+        { "label": "像队友：一起升级打怪，不断挑战新目标", "scores": { "surprise_novel": 2, "express_direct": 1 } },
+        { "label": "像朋友：轻松幽默，也能深聊人生", "scores": { "express_subtle": 2, "bond_space": 1 } }
+      ]
+    },
+    {
+      "text": "你更害怕的关系状态是？",
+      "choices": [
+        { "label": "冷战与含糊：不知道对方到底怎么想", "scores": { "express_direct": 2, "routine_stable": 1 } },
+        { "label": "被吞噬：没有私人时间与自我", "scores": { "bond_space": 3 } },
+        { "label": "一成不变：日子像复制粘贴", "scores": { "surprise_novel": 3 } },
+        { "label": "不稳定：承诺来回摇摆", "scores": { "routine_stable": 2, "bond_close": 1 } }
+      ]
+    },
+    {
+      "text": "如果只能选一个「关系加分项」，你选？",
+      "choices": [
+        { "label": "彼此能说真话，冲突也能修复", "scores": { "express_direct": 2, "routine_stable": 1 } },
+        { "label": "彼此尊重边界，亲密但不窒息", "scores": { "bond_space": 2, "express_subtle": 1 } },
+        { "label": "经常一起体验新事物", "scores": { "surprise_novel": 3 } },
+        { "label": "彼此是对方最稳定的情绪后盾", "scores": { "bond_close": 3 } }
+      ]
+    }
+  ],
+  "resultsByAxisKey": {
+    "C-D-R": {
+      "id": "cdr",
+      "shareCode": "AURA",
+      "title": "亲密直球稳定型",
+      "tagline": "高亲密 × 直接表达 × 稳定节律",
+      "body": "你更自然的方式是：把喜欢与需要说清楚，同时用稳定的相处节奏积累信任。研究语境里，「清晰沟通」与「可预期性」常被视为降低不确定感的路径之一；而高亲密需求并不等于依赖，关键在双方能否协商边界。\n\n潜在挑战是：当对方更含蓄或更需要空间时，你可能把「不说」误读为「不在乎」。可以尝试把期待拆成可观察的行为请求（例如频率、回应方式），而不是笼统的「你应该懂我」。",
+      "bullets": [
+        "优势：问题不容易积压，修复窗口更短。",
+        "练习：给对方「按自己风格表达爱」的空间。",
+        "提醒：稳定不等于刻板，保留小惊喜能延长活力。"
+      ],
+      "cite": "参考：亲密关系中的沟通清晰度与关系满意度相关研究（领域综述层面）；不构成个体评估。"
+    },
+    "C-D-N": {
+      "id": "cdn",
+      "shareCode": "SPRK",
+      "title": "亲密直球冒险型",
+      "tagline": "高亲密 × 直接表达 × 新鲜起伏",
+      "body": "你喜欢「热络且直白」，同时也需要关系里有火花：旅行、突发事件、即兴约会。对你来说，亲密不只是陪伴时长，还包括共同经历的张力与记忆点。\n\n风险在于高强度刺激可能掩盖日常修复机制。建议把「稳定的小协议」（例如冲突后的修复流程）写下来，作为冒险节奏的底盘。",
+      "bullets": [
+        "优势：关系不容易陷入沉闷，表达效率高。",
+        "练习：在刺激之外建立可重复的安心信号（晚安仪式、固定约会）。",
+        "提醒：注意对方的恢复节奏，避免把「兴奋」当作唯一亲密语言。"
+      ],
+      "cite": "参考：新奇体验对浪漫吸引的影响讨论；长期关系仍需维护性互动。"
+    },
+    "C-U-R": {
+      "id": "cur",
+      "shareCode": "GENT",
+      "title": "亲密含蓄稳定型",
+      "tagline": "高亲密 × 含蓄表达 × 稳定节律",
+      "body": "你更倾向用照顾、陪伴与细节积累亲密，而不是把所有情绪立刻语言化。稳定节奏让你安心，也让你更愿意持续投入。\n\n当对方更直球时，可能出现节奏错位：你被觉得「不够热烈」，而你觉得「我已经在行动里表达了」。可以用一句简短标注（「我在」「我在意」）作为桥梁，减少误读成本。",
+      "bullets": [
+        "优势：细水长流，冲突时更不容易情绪失控。",
+        "练习：每周一次「把行动翻译成一句话」的分享。",
+        "提醒：含蓄不等于回避，关键议题仍需要面对面说清楚。"
+      ],
+      "cite": "参考：表达风格差异与关系沟通研究；建议以协商而非对错框架讨论差异。"
+    },
+    "C-U-N": {
+      "id": "cun",
+      "shareCode": "MOOD",
+      "title": "亲密含蓄即兴型",
+      "tagline": "高亲密 × 含蓄表达 × 新鲜起伏",
+      "body": "你在亲密里很投入，但表达更像氛围与情境：突然的温柔、某个场景的默契。你也需要关系里有变化，才能持续感到「活着」。\n\n挑战是：对方若偏好高度结构化，可能把你的即兴读成「不稳定」。可以尝试把即兴放进「可承受窗口」（周末/假期），工作日保留轻量稳定连接。",
+      "bullets": [
+        "优势：情绪细腻，关系记忆点强。",
+        "练习：即兴之后给一个简短复盘，帮助对方同步你的动机。",
+        "提醒：避免用冷战代替表达需求。"
+      ],
+      "cite": "参考：情绪表达与修复策略；个体差异很大，结果仅供自我对话。"
+    },
+    "P-D-R": {
+      "id": "pdr",
+      "shareCode": "CLER",
+      "title": "空间直球稳定型",
+      "tagline": "重边界 × 直接表达 × 稳定节律",
+      "body": "你需要清晰的个人空间与可预期节奏，同时也希望沟通直接、少猜谜。对你来说，边界不是疏远，而是让亲密可持续的结构条件。\n\n潜在摩擦点在于：高亲密需求的伴侣可能把你的空间需求误解为冷淡。提前协商「联系窗口」「独处时间」比临场解释更有效。",
+      "bullets": [
+        "优势：低内耗，关系议题更容易被理性处理。",
+        "练习：用「我需要…因为…」句式，减少指责感。",
+        "提醒：稳定也可能被误读为「不够浪漫」，可用小仪式补足信号。"
+      ],
+      "cite": "参考：自主性与亲密关系满意度之间的平衡讨论；强调协商而非模板。"
+    },
+    "P-D-N": {
+      "id": "pdn",
+      "shareCode": "FREE",
+      "title": "空间直球探索型",
+      "tagline": "重边界 × 直接表达 × 新鲜起伏",
+      "body": "你既需要个人空间，也喜欢关系里有探索感；同时你不喜欢绕弯子。理想状态是：彼此是盟友，而不是互相监控的「连体婴」。\n\n挑战是：探索感可能带来不确定，若缺少安全基地，容易触发焦虑。建议明确「不可协商底线」（尊重、诚实、财务边界等），在此之上给探索留空间。",
+      "bullets": [
+        "优势：独立与亲密可以并存，表达效率高。",
+        "练习：把冒险计划与安全感信号绑定（例如出行前约定联络点）。",
+        "提醒：注意对方的依恋节奏，直球也要挑时机。"
+      ],
+      "cite": "参考：成人亲密关系中的自主—联结权衡；非病理化标签。"
+    },
+    "P-U-R": {
+      "id": "pur",
+      "shareCode": "CALM",
+      "title": "空间含蓄稳定型",
+      "tagline": "重边界 × 含蓄表达 × 稳定节律",
+      "body": "你更舒服的关系是：彼此有各自生活，用稳定的小习惯维持连接。你可能不擅长高频甜言蜜语，但会用一致性与可靠感表达认真。\n\n风险是：在需要快速对齐情绪的场合，含蓄可能被误读为冷漠。可以准备几句「高信号短语」作为应急（例如「我在意，但我需要一点时间整理」）。",
+      "bullets": [
+        "优势：低戏剧化，长期合作属性强。",
+        "练习：固定一个「关系周会」轻量复盘，不必很正式。",
+        "提醒：稳定不是回避冲突的借口。"
+      ],
+      "cite": "参考：低表达频率与高行动一致性并不矛盾；沟通风格无优劣。"
+    },
+    "P-U-N": {
+      "id": "pun",
+      "shareCode": "WAVE",
+      "title": "空间含蓄即兴型",
+      "tagline": "重边界 × 含蓄表达 × 新鲜起伏",
+      "body": "你需要空间，也需要关系里有意外的温柔与变化；但你未必习惯把所有感受立刻摊开。你可能更像「潮汐型」：有时靠近，有时退回自己的世界。\n\n这类节奏在匹配到同样能容纳波动的伴侣时很舒适；若对方需要高频确认，容易产生拉扯。建议用「可预期的不可预期」：例如约定每月一次共同尝试新事物，其余时间尊重各自节奏。",
+      "bullets": [
+        "优势：创造力与独立性并存，关系不容易窒息。",
+        "练习：退回空间时给一个时间承诺（「我晚上再聊」）。",
+        "提醒：即兴不等于回避承诺，关键议题仍需要清晰对齐。"
+      ],
+      "cite": "参考：个体差异与关系匹配；若感到持续痛苦请寻求专业支持。"
+    }
+  }
+}
