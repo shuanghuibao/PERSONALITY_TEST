@@ -231,3 +231,25 @@ button.cat:hover {
   padding: 0.15rem 0.45rem;
   border-radius: 999px;
 }
+
+.share-line-en {
+  margin: 0.35rem 0 0.75rem;
+  font-size: 0.86rem;
+  color: rgba(233, 240, 247, 0.82);
+  line-height: 1.45;
+}
+
+.share-preview {
+  margin: 0.75rem 0 1rem;
+}
+
+.share-img {
+  display: block;
+  width: 100%;
+  max-width: 22rem;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.45);
+}

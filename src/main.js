@@ -4,6 +4,16 @@ import { downloadBlob, renderSharePngBlob } from "./shareImage.js";
 
 const app = document.querySelector("#app");
 
+/** @type {string | null} */
+let shareObjectUrl = null;
+
+function revokeShareUrl() {
+  if (shareObjectUrl) {
+    URL.revokeObjectURL(shareObjectUrl);
+    shareObjectUrl = null;
+  }
+}
+
 /** @type {any} */
 let categories = [];
 /** @type {any} */
@@ -31,6 +41,7 @@ function el(html) {
 }
 
 function renderHome() {
+  revokeShareUrl();
   activeQuiz = null;
   const cards = categories
     .map(
@@ -43,10 +54,10 @@ function renderHome() {
     .join("");
 
   app.innerHTML = `
-    <h1>分类偏好小测</h1>
-    <p class="sub">先选择主题，再完成一组题目。结果用于自我探索与讨论，不构成任何临床、职业或关系诊断。</p>
+    <h1>赛博榨菜小测</h1>
+    <p class="sub">先选一包「电子榨菜」口味：运动 / 恋爱 / 追星。题目偏玩梗，结果偏嘴替；认真你就输了半格，但完全不认真你也点不进来。</p>
     <section class="card">
-      <h2 style="margin-top:0;font-size:1rem">选择测试</h2>
+      <h2 style="margin-top:0;font-size:1rem">今天想测啥</h2>
       <div class="category-grid">${cards}</div>
     </section>
   `;
@@ -141,6 +152,7 @@ function renderQuestion() {
 }
 
 function renderResult() {
+  revokeShareUrl();
   const { cat, quiz } = activeQuiz;
   const { axisKey, result } = pickResult(quiz, scores);
   const bullets = (result.bullets || [])
@@ -150,16 +162,22 @@ function renderResult() {
     .split(/\n\n+/)
     .map((p) => `<p>${escapeHtml(p).replaceAll("\n", "<br/>")}</p>`)
     .join("");
+  const lineEn = escapeHtml(result.shareCodeLineEn || "");
 
   const node = el(`
     <div>
-      <h1>你的结果</h1>
+      <h1>出分了（赛博版）</h1>
       <p class="sub">${escapeHtml(quiz.title)}</p>
       <section class="card">
         <div class="result-code">${escapeHtml(result.shareCode)}</div>
-        <div class="axis-pill">三轴谱：${escapeHtml(axisKey)}</div>
+        <p class="share-line-en" aria-label="英文释义">${lineEn}</p>
+        <div class="axis-pill">三轴暗号：${escapeHtml(axisKey)}（懂的人自然懂）</div>
         <h2 class="result-title">${escapeHtml(result.title)}</h2>
         ${result.tagline ? `<p class="muted">${escapeHtml(result.tagline)}</p>` : ""}
+        <div class="share-preview" id="share-preview">
+          <p class="muted" id="share-loading">分享图生成中…</p>
+          <img id="share-img" class="share-img hidden" alt="你的结果分享图" />
+        </div>
         <div class="result-body">${paras}</div>
         ${
           bullets
@@ -168,7 +186,7 @@ function renderResult() {
         }
         <p class="cite">${escapeHtml(result.cite || "")}</p>
         <div class="btn-row">
-          <button type="button" class="primary" id="btn-share">下载分享图（MBTI 风）</button>
+          <button type="button" class="primary" id="btn-share">下载这张图为 PNG</button>
           <button type="button" class="ghost" id="btn-again">同主题再测</button>
           <button type="button" class="ghost" id="btn-home">换主题</button>
         </div>
@@ -180,10 +198,35 @@ function renderResult() {
 
   $("#btn-home", app).addEventListener("click", () => renderHome());
   $("#btn-again", app).addEventListener("click", () => {
+    revokeShareUrl();
     scores = initScores(quiz);
     qIndex = 0;
     renderIntro();
   });
+
+  const imgEl = $("#share-img", app);
+  const loadEl = $("#share-loading", app);
+
+  (async () => {
+    try {
+      const blob = await renderSharePngBlob({
+        shareCode: result.shareCode,
+        shareCodeLineEn: result.shareCodeLineEn || "",
+        title: result.title,
+        tagline: result.tagline || quiz.title,
+        categoryTitle: cat.title,
+        gradient: cat.theme.gradient,
+        accent: cat.theme.accent,
+      });
+      shareObjectUrl = URL.createObjectURL(blob);
+      imgEl.src = shareObjectUrl;
+      imgEl.classList.remove("hidden");
+      loadEl.classList.add("hidden");
+    } catch (e) {
+      console.error(e);
+      loadEl.textContent = "分享图生成失败：换个浏览器试试，或刷新页面。";
+    }
+  })();
 
   $("#btn-share", app).addEventListener("click", async () => {
     const btn = $("#btn-share", app);
@@ -191,6 +234,7 @@ function renderResult() {
     try {
       const blob = await renderSharePngBlob({
         shareCode: result.shareCode,
+        shareCodeLineEn: result.shareCodeLineEn || "",
         title: result.title,
         tagline: result.tagline || quiz.title,
         categoryTitle: cat.title,
@@ -200,7 +244,7 @@ function renderResult() {
       downloadBlob(blob, `quiz-${cat.id}-${result.shareCode}.png`);
     } catch (e) {
       console.error(e);
-      alert("生成图片失败，请换浏览器重试。");
+      alert("下载失败：请换浏览器重试。");
     } finally {
       btn.removeAttribute("disabled");
     }

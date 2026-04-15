@@ -1,32 +1,32 @@
 [
   {
     "id": "sports",
-    "title": "运动偏好",
-    "subtitle": "协作—环境—负荷结构：粗略匹配常见运动参与特征。",
+    "title": "运动榨菜：你是什么「动法」？",
+    "subtitle": "测测你是团魂野人、健身房NPC、还是间歇性想瘦。",
     "quizPath": "data/tests/sports.json",
     "theme": {
-      "accent": "#4aa8ff",
-      "gradient": ["#153a66", "#0b0f14"]
+      "accent": "#5cb6ff",
+      "gradient": ["#1a4a82", "#0b0f14"]
     }
   },
   {
     "id": "romance",
-    "title": "恋爱互动偏好",
-    "subtitle": "表达—亲密节奏—关系起伏：帮助你理解自己的互动风格。",
+    "title": "恋爱榨菜：你的「上头机制」",
+    "subtitle": "不判对错，只判你更吃直球还是拉扯、稳定还是整活。",
     "quizPath": "data/tests/romance.json",
     "theme": {
       "accent": "#ff7ab8",
-      "gradient": ["#4a1f3d", "#0b0f14"]
+      "gradient": ["#5a1f42", "#0b0f14"]
     }
   },
   {
     "id": "fandom",
-    "title": "追星 / 同人参与",
-    "subtitle": "社群深度—信息宽度—创作投入：描述你参与粉丝文化的方式。",
+    "title": "追星榨菜：你是哪种「同担形态」？",
+    "subtitle": "从潜水到产粮，从单推到混邪，互联网嘴替一下。",
     "quizPath": "data/tests/fandom.json",
     "theme": {
-      "accent": "#b388ff",
-      "gradient": ["#2f2250", "#0b0f14"]
+      "accent": "#c9a7ff",
+      "gradient": ["#352060", "#0b0f14"]
     }
   }
 ]
